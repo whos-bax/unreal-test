@@ -3,12 +3,18 @@ import subprocess
 
 def create_video_from_images(image_folder, image_prev_name, output_video, fps=30):
     """
-    Converts a sequence of images into a video.
+    Converts a sequence of images into an MP4 video.
 
     :param image_folder: Path to the folder containing images.
-    :param output_video: Path to the output video file (e.g., output.mp4).
+    :param output_video: Path to the output MP4 video file (e.g., output.mp4).
     :param fps: Frames per second for the output video.
     """
+    # Ensure the output directory exists
+    output_dir = os.path.dirname(output_video)
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+        print(f"Created directory: {output_dir}")
+        
     # Ensure FFmpeg is installed
     try:
         subprocess.run(["ffmpeg", "-version"], stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=True)
@@ -38,6 +44,6 @@ def create_video_from_images(image_folder, image_prev_name, output_video, fps=30
 
 # Example usage
 image_folder = "cesium1/Saved/MovieRenders"  # Replace with your image folder path
-image_prev_name = "NewLevelSequence" # ex. frame_0001.png , frame_0002.png
-output_video = "output.mp4"  # Replace with your desired output video file name
+image_prev_name = "NewLevelSequence" # ex. frame.0001.png , frame.0002.png
+output_video = "cesium1/Saved/Output/output.mp4"  # Replace with your desired output video file name
 create_video_from_images(image_folder, image_prev_name, output_video)
