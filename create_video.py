@@ -14,7 +14,7 @@ def create_video_from_images(image_folder, image_prev_name, output_video, fps=30
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
         print(f"Created directory: {output_dir}")
-        
+
     # Ensure FFmpeg is installed
     try:
         subprocess.run(["ffmpeg", "-version"], stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=True)
@@ -43,7 +43,7 @@ def create_video_from_images(image_folder, image_prev_name, output_video, fps=30
         print(f"Error occurred while creating video: {e}")
 
 # Example usage
-image_folder = "cesium1/Saved/MovieRenders"  # Replace with your image folder path
-image_prev_name = "NewLevelSequence" # ex. frame.0001.png , frame.0002.png
-output_video = "cesium1/Saved/Output/output.mp4"  # Replace with your desired output video file name
+image_folder = "forest/Saved/MovieRenders"  # Replace with your image folder path
+image_prev_name = "NewLevelSequence" # {image_prev_name}.0001.png -> ex. frame.0001.png , frame.0002.png
+output_video = "forest/Saved/Output/output.mp4"  # Replace with your desired output video file name
 create_video_from_images(image_folder, image_prev_name, output_video)
