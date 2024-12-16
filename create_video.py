@@ -44,6 +44,6 @@ def create_video_from_images(image_folder, image_prev_name, output_video, fps=30
 
 # Example usage
 image_folder = "forest/Saved/MovieRenders"  # Replace with your image folder path
-image_prev_name = "NewLevelSequence" # {image_prev_name}.0001.png -> ex. frame.0001.png , frame.0002.png
-output_video = "forest/Saved/Output/output.mp4"  # Replace with your desired output video file name
+image_prev_name = "test_zoom" # {image_prev_name}.0001.png -> ex. frame.0001.png , frame.0002.png
+output_video = "forest/Saved/Output/1차샘플_4_40sec.mp4"  # Replace with your desired output video file name
 create_video_from_images(image_folder, image_prev_name, output_video)
