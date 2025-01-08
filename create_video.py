@@ -1,7 +1,14 @@
 import os
 import subprocess
 
-def create_video_from_images(image_folder, image_prev_name, output_video, fps=30):
+def create_video_from_images(image_folder, image_prev_name, output_video, fps=12):
+
+    print(f"Current working directory: {os.getcwd()}")
+    os.chdir("/Users/whosbax/Documents/GitHub/unreal-test")  # 작업 디렉토리 설정
+    print(f"Input folder exists: {(image_folder)}, {os.path.exists(image_folder)}")
+    print(f"Sample file exists: {os.path.exists(os.path.join(image_folder, 'camera_act_1.0000.png'))}")
+    print(f"Output folder exists: {os.path.exists(os.path.dirname(output_video))}")
+
     """
     Converts a sequence of images into an MP4 video.
 
@@ -43,7 +50,7 @@ def create_video_from_images(image_folder, image_prev_name, output_video, fps=30
         print(f"Error occurred while creating video: {e}")
 
 # Example usage
-image_folder = "forest/Saved/MovieRenders/TypeB"  # Replace with your image folder path
-image_prev_name = "mid_2min" # {image_prev_name}.0001.png -> ex. frame.0001.png , frame.0002.png
-output_video = "forest/Saved/Output/TypeB/mid_2min.mp4"  # Replace with your desired output video file name
+image_folder = "cesium1/Saved/MovieRenders/Scene04"  # Replace with your image folder path
+image_prev_name = "scene04_hl" # {image_prev_name}.0001.png -> ex. frame.0001.png , frame.0002.png
+output_video = "cesium1/Saved/Output/scenario_4_hl.mp4"  # Replace with your desired output video file name
 create_video_from_images(image_folder, image_prev_name, output_video)
