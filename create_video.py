@@ -50,7 +50,7 @@ def create_video_from_images(image_folder, image_prev_name, output_video, fps=12
         print(f"Error occurred while creating video: {e}")
 
 # Example usage
-image_folder = "cesium1/Saved/MovieRenders/Scene04"  # Replace with your image folder path
-image_prev_name = "scene04_hl" # {image_prev_name}.0001.png -> ex. frame.0001.png , frame.0002.png
-output_video = "cesium1/Saved/Output/scenario_4_hl.mp4"  # Replace with your desired output video file name
+image_folder = "cesium1/Saved/MovieRenders/Scene03"  # Replace with your image folder path
+image_prev_name = "scene03_hl" # {image_prev_name}.0001.png -> ex. frame.0001.png , frame.0002.png
+output_video = "cesium1/Saved/Output/scenario_3_hl.mp4"  # Replace with your desired output video file name
 create_video_from_images(image_folder, image_prev_name, output_video)
